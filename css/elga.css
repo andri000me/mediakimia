@@ -2,3 +2,8 @@
     height: 47px;
     width: 165px;
 }
+
+.el-link {
+    text-decoration: none;
+    color: white;
+}
