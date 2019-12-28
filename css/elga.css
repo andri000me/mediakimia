@@ -1,3 +1,13 @@
+.quiz {
+    background-color: #ecf5ff;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
 .el-logo {
     height: 47px;
     width: 165px;
@@ -6,4 +16,137 @@
 .el-link {
     text-decoration: none;
     color: white;
+}
+
+.quiz h1 {
+    margin-bottom: 1rem;
+    font-size: 4.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+}
+
+.quiz h2 {
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.quiz h3 {
+    margin-bottom: 1rem;
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.quiz h4 {
+    margin-bottom: 1rem;
+}
+
+.quiz h1 span {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+
+/* Utilities */
+
+.container-quiz {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.container-quiz>* {
+    width: 100%;
+}
+
+.flex-column-quiz {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center-quiz {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center-quiz {
+    justify-content: center;
+}
+
+.text-center-quiz {
+    text-align: center;
+}
+
+.hidden-quiz {
+    display: none;
+}
+
+
+/* Buttons */
+
+.btn-quiz {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #56a5eb;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #56a5eb;
+    background-color: white;
+}
+
+.btn-quiz:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.btn-quiz[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+
+/* Quiz */
+
+.choice-container-quiz {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(86, 165, 235, 0.25);
+    background-color: white;
+}
+
+.choice-container-quiz:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix-quiz {
+    padding: 1.5rem 2.5rem;
+    background-color: #56a5eb;
+    color: white;
+}
+
+.choice-text-quiz {
+    padding: 1.5rem;
+}
+
+.correct {
+    background-color: #28a745;
+}
+
+.incorrect {
+    background-color: #dc3545;
 }
