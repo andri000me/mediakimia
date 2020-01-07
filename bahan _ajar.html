@@ -25,6 +25,39 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- style CSS -->
     <link rel="stylesheet" href="css/elga.css" />
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    };
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -61,28 +94,29 @@
                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="pretest.html">Pre Test</a>
-                                        <a class="dropdown-item" href="posttest.html">Post Test</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+                                        <a class="dropdown-item" href="posttest.html">Post Test</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
+      </div>
     </header>
     <!-- Header part end-->
 
     <!-- breadcrumb start-->
     <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner text-center">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Bahan Ajar</h2>
-                            <p>
-                                <a class="el-link" href="index.html">Beranda</a><span>/</span
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb_iner text-center">
+              <div class="breadcrumb_iner_item">
+                <h2>Bahan Ajar</h2>
+                <p>
+                  <a class="el-link" href="index.html">Beranda</a><span>/</span
                   ><a class="el-link" href="bahan _ajar.html">Bahan Ajar</a>
                 </p>
               </div>
@@ -94,23 +128,14 @@
     <!-- breadcrumb finish-->
 
     <!-- materi mulai -->
-    <div class="row justify-content-center">
-      <img src="img/lks/Bahan Ajar-01.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-02.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-03.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-04.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-05.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-06.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-07.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-08.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-09.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-10.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-11.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-12.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-13.jpg" alt="" />
-      <img src="img/lks/Bahan Ajar-14.jpg" alt="" />
+    <div class="container">
+      <div class="row justify-content-center">
+        <h1 class="mt-4">Bahan Ajar Redoks</h1>
+        <br />
+        <div w3-include-html="bahanredoks.html"></div>
+        <br>
+      </div>
     </div>
-    <!-- materi akhir -->
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -166,10 +191,10 @@
               <h4>Contact us</h4>
               <div class="contact_info">
                 <p><span> Alamat :</span> Unnes</p>
-                            <p><span> Phone :</span> 08123456789</p>
-                            <p><span> Email : </span>cobacoba@gmail.com</p>
+                                        <p><span> Phone :</span> 08123456789</p>
+                                        <p><span> Email : </span>cobacoba@gmail.com</p>
+                                    </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -203,6 +228,9 @@
         <!-- jquery plugins here-->
         <!-- jquery -->
         <script src="js/jquery-1.12.1.min.js"></script>
+        <script>
+          includeHTML();
+      </script>
         <!-- popper js -->
         <script src="js/popper.min.js"></script>
         <!-- bootstrap js -->
