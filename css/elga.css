@@ -187,3 +187,16 @@
         height: 10%;
     }
 }
+
+.widget_nav_menu ul li:before {
+    2 content: none;
+    3 display: inline;
+    4 5
+}
+
+6 ​ 7 .footer-widgets-area .widget ul li {
+    8 width: 100%;
+    9 display: inline;
+    10 margin-right: 1em;
+    11
+}
